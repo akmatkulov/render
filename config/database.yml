@@ -80,6 +80,4 @@ test:
 #
 production:
   <<: *default
-  database: sample_pg_production
-  username: sample_pg
-  password: <%= ENV["SAMPLE_PG_DATABASE_PASSWORD"] %>
+  password: <%= ENV["DATABASE_URL"] %>
