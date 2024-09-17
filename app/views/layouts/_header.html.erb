@@ -1,0 +1,23 @@
+<header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <img src="<%= image_path('ruby_logo.svg')%>" alt="Logo" width="60" height="60" class="d-inline-block align-text-top">
+          <%= link_to 'SAMPLE APP', root_path, class: 'nav-link fs-3 fw-bold' %>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
+              <ul class="navbar-nav ms-auto flex-nowrap fs-4">
+                  <li class="nav-item">
+                     <%= link_to 'Home', '#', class: 'nav-link' %>
+                  </li>
+                  <li class="nav-item">
+                      <%= link_to 'About', '#', class: 'nav-link' %>
+                  </li>
+                  <li class="nav-item">
+                      <%= link_to 'Help', '#', class: 'nav-link' %>
+                  </li>
+                </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+</header>

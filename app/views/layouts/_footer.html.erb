@@ -1,0 +1,13 @@
+<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <p class="col-md-4 mb-0 text-body-secondary fs-5">&copy; 2024 Company, Inc</p>
+
+    <a href="https://rubyonrails.org/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <img src="<%= image_path('rails-1.svg')%>" alt="Logo" width="60" height="60" class="d-inline-block align-text-top bi me-2">
+    </a>
+
+    <ul class="nav col-md-4 justify-content-end fs-4">
+      <li class="nav-item"><%= link_to 'About', about_path, class: "nav-link px-2 text-body-secondary" %></li>
+      <li class="nav-item"><%= link_to 'Contact', contact_path, class: "nav-link px-2 text-body-secondary" %></li>
+      <li class="nav-item"><a href="https://rubyonrails.org/category/news" class="nav-link px-2 text-body-secondary">News</a></li>
+    </ul>
+</footer>
