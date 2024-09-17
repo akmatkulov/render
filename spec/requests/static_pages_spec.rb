@@ -22,7 +22,7 @@ RSpec.describe 'StaticPages', type: :request do
   describe "root 'static_pages#home'" do
     it 'renders a successful response' do
       get '/'
-      assert_select 'title', 'Home | Sample App'
+      assert_select 'title', 'Sample App'
       expect(response).to be_successful
     end
   end
