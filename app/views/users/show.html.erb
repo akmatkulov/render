@@ -1,0 +1,8 @@
+<% content_for :title, @user.name %>
+<div class="p-5 mb-4 bg-body-light rounded-3">
+  <div class="container-fluid py-5">
+        <%= gravatar_for @user %>
+        <p> <%= @user.name %> </p>
+        <p> <%= @user.email %></p>
+  </div>
+</div>

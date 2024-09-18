@@ -17,7 +17,6 @@ gem 'tzinfo-data', platforms: %i[windows jruby]
 gem 'bcrypt', '~> 3.1', '>= 3.1.12'
 gem "factory_bot_rails"
 
-
 group :development, :test do
   gem "ffaker"
   gem 'shoulda-matchers', '~> 6.0'
