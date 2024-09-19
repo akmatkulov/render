@@ -15,15 +15,15 @@ gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[windows jruby]
 
 gem 'bcrypt', '~> 3.1', '>= 3.1.12'
-gem "factory_bot_rails"
+gem 'factory_bot_rails'
 
 group :development, :test do
-  gem "ffaker"
-  gem 'shoulda-matchers', '~> 6.0'
   gem 'brakeman', require: false
   gem 'debug', platforms: %i[mri windows], require: 'debug/prelude'
+  gem 'ffaker'
   gem 'rspec-rails', '~> 7.0.0'
   gem 'rubocop-rspec_rails', require: false
+  gem 'shoulda-matchers', '~> 6.0'
 end
 
 group :development do
