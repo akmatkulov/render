@@ -16,6 +16,7 @@ gem 'tzinfo-data', platforms: %i[windows jruby]
 
 gem 'bcrypt', '~> 3.1', '>= 3.1.12'
 gem 'factory_bot_rails'
+gem 'pagy', '~> 9.0', '>= 9.0.9'
 
 group :development, :test do
   gem 'brakeman', require: false
@@ -27,8 +28,10 @@ group :development, :test do
 end
 
 group :development do
+  gem 'rubocop', require: false
   gem 'rubocop-factory_bot', require: false
   gem 'rubocop-performance', require: false
+  gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
   gem 'web-console'
 end

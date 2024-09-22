@@ -13,13 +13,16 @@
                       <%= link_to 'Help', help_path, class: 'nav-link' %>
                   </li>
                   <% if logged_in? %>
+                  <li class="nav-item">
+                      <%= link_to 'All Users', users_path, class: 'nav-link' %>
+                  </li>
                     <div class="btn-group">
                       <button type="button" class="btn btn-outline-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                         Account
                       </button>
                       <ul class="dropdown-menu">
                         <li><%= link_to 'Profile', current_user, class: 'dropdown-item' %></li>
-                        <li><%= link_to 'Settings', '#', class: 'dropdown-item' %></li>
+                        <li><%= link_to 'Settings', edit_user_path(current_user), class: 'dropdown-item' %></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><%= button_to "Log out", logout_path, method: :delete, class: "dropdown-item" %></li>
                       </ul>

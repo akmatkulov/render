@@ -6,7 +6,7 @@ RSpec.describe 'StaticPages', type: :request do
   describe 'layout links' do
     it 'links' do
       get root_path
-      assert_select 'a', text: 'About', count: 2
+      assert_select 'a', text: 'About', count: 1
       assert_select 'a', text: 'Contact', count: 1
       assert_select 'a', text: 'News', count: 1
     end

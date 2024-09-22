@@ -9,3 +9,14 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+99.times do |_n|
+  name = FFaker::Name.name
+  email = FFaker::Internet.email
+  password = 'password'
+  User.create!(
+    name:,
+    email:,
+    password:,
+    password_confirmation: password
+  )
+end
