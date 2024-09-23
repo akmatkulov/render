@@ -1,0 +1,17 @@
+<% content_for :title, "Forgot password" %>
+<div class="row justify-content-center mt-3">
+    <div class="col-md-6">
+        <div class="card w-75 mb-3">
+            <div class="card-body">
+                <h5 class="card-title fs-3 text-center">Forgot password</h5>
+                <%= form_for(:password_reset, url: password_resets_path) do |form| %>
+                    <div class="mb-3">
+                        <%= form.label :email, class: "form-label" %>
+                        <%= form.text_field :email, type: "email", class: "form-control" %>
+                    </div>
+                    <%= form.submit 'Submit' %>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
