@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
-  attr_accessor :remember_token
+  attr_accessor :remember_token, :activation_token
 
-  normalizes :email, with: ->(email) { email.downcase }
+  before_create :create_activation_digest
+  before_save :downcase_email
   validates :email, presence: true, length: { maximum: 150 },
                     format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i },
                     uniqueness: { case_sensitive: false }
@@ -35,14 +36,36 @@ class User < ApplicationRecord
   end
 
   # Return true if token consistent digest
-  def authenticated?(remember_token)
-    return false if remember_digest.nil?
+  def authenticated?(attribute, token)
+    digest = send("#{attribute}_digest")
+    return false if digest.nil?
 
-    BCrypt::Password.new(remember_digest).is_password?(remember_token)
+    BCrypt::Password.new(digest).is_password?(token)
   end
 
   # Forget user
   def forget
     update_attribute(:remember_digest, nil)
+  end
+
+  def activate
+    update_attribute(:activated, true)
+    update_attribute(:activated_at, Time.zone.now)
+  end
+
+  def send_activation_email
+    UserMailer.account_activation(@user).deliver_now
+  end
+
+  private
+
+  def downcase_email
+    self.email = email.downcase
+  end
+
+  # Create token and digest activation
+  def create_activation_digest
+    self.activation_token = User.new_token
+    self.activation_digest = User.digest(activation_token)
   end
 end
