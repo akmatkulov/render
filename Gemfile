@@ -16,7 +16,7 @@ gem 'tzinfo-data', platforms: %i[windows jruby]
 
 gem 'bcrypt', '~> 3.1', '>= 3.1.12'
 gem 'factory_bot_rails'
-gem 'pagy', '~> 9.0', '>= 9.0.9'
+gem 'pagy', '~> 9.1'
 
 group :development, :test do
   gem 'brakeman', require: false
